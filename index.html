@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dessin de Maison avec Portes et Fenêtre - Vue Latérale Gauche avec Materialize</title>
+    <!-- Inclure les liens vers les styles de Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content">
+                        <canvas id="maCanvas" width="800" height="600"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var canvas = document.getElementById("maCanvas");
+        var context = canvas.getContext("2d");
+
+        // Dessiner le mur de la maison
+        context.fillStyle = "#ffcc00";
+        context.fillRect(200, 200, 400, 300);
+
+        // Dessiner le toit de la maison
+        context.fillStyle = "#990000";
+        context.beginPath();
+        context.moveTo(200, 200);
+        context.lineTo(600, 200);
+        context.lineTo(400, 100);
+        context.closePath();
+        context.fill();
+
+        // Dessiner la fenêtre en haut de forme arrondie
+        context.fillStyle = "#33ccff";
+        context.beginPath();
+        context.arc(400, 150, 30, 0, Math.PI * 2, false);
+        context.closePath();
+        context.fill();
+
+        // Dessiner la porte d'entrée
+        context.fillStyle = "#663300";
+        context.fillRect(375, 400, 50, 100);
+
+        // Dessiner la première porte horizontale sur le côté gauche
+        context.fillStyle = "#663300";
+        context.fillRect(250, 310, 150, 50);
+
+        // Dessiner la deuxième porte horizontale sur le côté gauche
+        context.fillStyle = "#663300";
+        context.fillRect(250, 450, 150, 50);
+
+        // Dessiner la fenêtre entre les portes horizontales
+        context.fillStyle = "#33ccff";
+        context.fillRect(350, 360, 50, 50);
+    </script>
+
+    <!-- Inclure le lien vers le script de Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
